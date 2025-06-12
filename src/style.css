@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --font-famlily: 'Karla', sans-serif;
+  --accent-color: #12c0dd;
+  --light-color: #fff;
+  --border-radius: 10px;
+  --width-line: 2px;
+  --tr: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+body,
+html {
+  height: 100wh;
+}
+
+body {
+  font-family: var(--font-famlily);
+  background-color: aquamarine;
+  height: 100%;
+}
+
+input,
+button {
+  font-family: var(--font-famlily);
+}
+
+.weather {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.weather-bg > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-bg__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0;
+  transition: var(--tr) ease-in-out;
+}
+
+.weather .weather-bg__img.bg {
+  opacity: 1;
+}
