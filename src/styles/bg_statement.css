@@ -1,0 +1,75 @@
+/*START of block with image statement */
+
+.weather.clear .weather-bg__img:not(.clear) {
+  opacity: 0;
+}
+
+.weather.clear .weather-bg__img.clear {
+  opacity: 1;
+}
+
+.weather.few .weather-bg__img:not(.few) {
+  opacity: 0;
+}
+
+.weather.few .weather-bg__img.few {
+  opacity: 1;
+}
+
+.weather.scattered .weather-bg__img:not(.scattered) {
+  opacity: 0;
+}
+
+.weather.scattered .weather-bg__img.scattered {
+  opacity: 1;
+}
+
+.weather.broken .weather-bg__img:not(.broken) {
+  opacity: 0;
+}
+
+.weather.broken .weather-bg__img.broken {
+  opacity: 1;
+}
+
+.weather.shower .weather-bg__img:not(.shower) {
+  opacity: 0;
+}
+
+.weather.shower .weather-bg__img.shower {
+  opacity: 1;
+}
+
+.weather.rain .weather-bg__img:not(.rain) {
+  opacity: 0;
+}
+
+.weather.rain .weather-bg__img.rain {
+  opacity: 1;
+}
+
+.weather.thunderstorm .weather-bg__img:not(.thunderstorm) {
+  opacity: 0;
+}
+
+.weather.thunderstorm .weather-bg__img.thunderstorm {
+  opacity: 1;
+}
+
+.weather.snow .weather-bg__img:not(.snow) {
+  opacity: 0;
+}
+
+.weather.snow .weather-bg__img.snow {
+  opacity: 1;
+}
+
+.weather.mist .weather-bg__img:not(.mist) {
+  opacity: 0;
+}
+
+.weather.mist .weather-bg__img.mist {
+  opacity: 1;
+}
+
+/* END of block with image statement */
