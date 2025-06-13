@@ -2,7 +2,7 @@
   <div class="weather">
     <div class="container">
       <div class="card weather-form">
-        <input type="text" class="weater-form__input" placeholder="Enter city">
+        <input type="text" class="weather-form__input" placeholder="Enter city">
         <button class="weather-form__btn">Search</button>
       </div>
       <div class="card weather-loading">Loading...</div>
