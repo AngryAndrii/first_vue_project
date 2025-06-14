@@ -29,8 +29,9 @@ npm run build
 ```
 
 clear sky
-few clouds
+
 scattered clouds
+few clouds
 broken clouds
 shower rain
 rain
