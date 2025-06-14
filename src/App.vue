@@ -17,7 +17,7 @@
     </div>
     <div class="weather-bg">
       <div>
-        <img class="weather-bg__img bg" src="./images/standard" alt="">
+        <img class="weather-bg__img bg" src="./images/standard.jpg" alt="">
         <img class="weather-bg__img clear" src="./images/clear-sky.jpg" alt="clear">
         <img class="weather-bg__img few" src="./images/few-clouds.jpg" alt="few clouds">
         <img class="weather-bg__img scattered" src="./images/scattered-clouds.jpg" alt="scattered clouds">
