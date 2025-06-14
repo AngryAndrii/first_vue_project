@@ -1,17 +1,17 @@
 <template>
-  <div class="weather">
+  <div class="weather" :class="weatherClass">
     <div class="container">
       <div class="card weather-form">
-        <input type="text" class="weather-form__input" placeholder="Enter city">
-        <button class="weather-form__btn">Search</button>
+        <input type="text" class="weather-form__input" v-model="searchQuery" @keyup.enter="weatherSearch" placeholder="Enter city">
+        <button class="weather-form__btn" @click="weatherSearch">Search</button>
       </div>
-      <div class="card weather-loading">Loading...</div>
-      <div class="weather-info">
+      <div class="card weather-loading" v-if="loading">Loading...</div>
+      <div class="weather-info" v-show="!error && location && temp !== 0 && descr">
+        <div class="card" v-if="error">Error!!</div>
         <div class="weather-info__text">
-          <p class="card">Phuket</p>
-          <p class="card">29°C</p>
-          <p class="card">Sunny</p>
-          <p class="card"></p>
+          <p class="card">{{ location }}</p>
+          <p class="card">{{ temp }}°C</p>
+          <p class="card">{{ descr }}</p>
         </div>
       </div>
     </div>
@@ -35,21 +35,62 @@
 <script>
 export default {
   data() {
-    this.weatherSearch()
     return {
-
-      }
+      location: '',
+      temp: '',
+      descr: '',
+      loading: false,
+      error: false,
+      searchQuery: '',
+     }
   },
-    // computed: {
-
-    // }
+    computed: {
+      weatherClass() {
+  const desc = this.descr.toLowerCase();
+  switch (true) {
+    case desc.includes('clear'):
+      return 'clear';
+    case desc.includes('few clouds'):
+      return 'few';
+    case desc.includes('scattered clouds'):
+      return 'scattered';
+    case desc.includes('broken clouds'):
+      return 'broken';
+    case desc.includes('shower rain'):
+      return 'shower';
+    case desc.includes('rain'):
+      return 'rain';
+    case desc.includes('thunderstorm'):
+      return 'thunderstorm';
+    case desc.includes('snow'):
+      return 'snow';
+    case desc.includes('mist'):
+      return 'mist';
+    default:
+      return '';
+  }
+}
+    },
     methods: {
-    weatherSearch() {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=milan&appid=8ffe6449c5da40e64905d7a9f8d0ee6e&units=metric").then(response => response.json()).then(data => console.log(data))
+      weatherSearch() {
+        this.loading = true;
+        this.error = false;
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.searchQuery}&appid=8ffe6449c5da40e64905d7a9f8d0ee6e&units=metric`).then(response => response.json()).then(data => {
+          console.log(data);
+          this.loading = false;
+          this.location = data.name;
+          this.temp = data.main.temp;
+          this.descr = data.weather[0].description;
+          this.resetSearchQuery()
+        }).catch(error => {
+          this.loading = false;
+          this.error = true;
+          console.error(error);
+         })
       },
-      // resetSearchQuery() {
-
-      // }
+      resetSearchQuery() {
+        this.searchQuery = ''
+      }
     }
   }
 </script>
