@@ -32,11 +32,11 @@
   opacity: 1;
 }
 
-.weather.shower .weather-bg__img:not(.shower) {
+.weather.heavy .weather-bg__img:not(.heavy) {
   opacity: 0;
 }
 
-.weather.shower .weather-bg__img.shower {
+.weather.heavy .weather-bg__img.heavy {
   opacity: 1;
 }
 
@@ -45,6 +45,14 @@
 }
 
 .weather.rain .weather-bg__img.rain {
+  opacity: 1;
+}
+
+.weather.moderate .weather-bg__img:not(.moderate) {
+  opacity: 0;
+}
+
+.weather.moderate .weather-bg__img.moderate {
   opacity: 1;
 }
 
@@ -69,6 +77,14 @@
 }
 
 .weather.mist .weather-bg__img.mist {
+  opacity: 1;
+}
+
+.weather.overcast .weather-bg__img:not(.overcast) {
+  opacity: 0;
+}
+
+.weather.overcast .weather-bg__img.overcast {
   opacity: 1;
 }
 
