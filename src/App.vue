@@ -21,8 +21,10 @@
         <img class="weather-bg__img clear" src="./images/clear-sky.jpg" alt="clear">
         <img class="weather-bg__img few" src="./images/few-clouds.jpg" alt="few clouds">
         <img class="weather-bg__img scattered" src="./images/scattered-clouds.jpg" alt="scattered clouds">
-        <img class="weather-bg__img broken" src="./images/broken-clouds.jpg" alt="broken-clouds">
-        <img class="weather-bg__img shower" src="./images/shower-rain.jpg" alt="">
+        <img class="weather-bg__img overcast" src="./images/overcast.jpg" alt="overcast clouds">
+        <img class="weather-bg__img broken" src="./images/broken-clouds.jpg" alt="broken clouds">
+        <img class="weather-bg__img heavy" src="./images/shower-rain.jpg" alt="">
+        <img class="weather-bg__img moderate" src="./images/moderate.jpg" alt="">
         <img class="weather-bg__img rain" src="./images/rain.jpg" alt="">
         <img class="weather-bg__img thunderstorm" src="./images/thunderstorm.jpg" alt="">
         <img class="weather-bg__img snow" src="./images/snow.jpg" alt="">
@@ -46,19 +48,25 @@ export default {
   },
     computed: {
       weatherClass() {
-  const desc = this.descr.toLowerCase();
-  switch (true) {
+        const desc = this.descr.toLowerCase();
+    switch (true) {
     case desc.includes('clear'):
       return 'clear';
     case desc.includes('few clouds'):
       return 'few';
     case desc.includes('scattered clouds'):
       return 'scattered';
+    case desc.includes('overcast clouds'):
+      return 'overcast';
     case desc.includes('broken clouds'):
       return 'broken';
-    case desc.includes('shower rain'):
-      return 'shower';
+      case desc.includes('moderate rain'):
+      return 'moderate';
+    case desc.includes('heavy rain'):
+      return 'heavy';
     case desc.includes('rain'):
+      return 'rain';
+      case desc.includes('drizzle'):
       return 'rain';
     case desc.includes('thunderstorm'):
       return 'thunderstorm';
